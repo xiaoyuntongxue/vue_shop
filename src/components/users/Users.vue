@@ -247,7 +247,7 @@
           const {data:res} = await this.$http.post('users',this.addForm)
           // console.log(res,188);
           if (res.meta.status !== 201) {
-            this.$message.error('添加用户失败!')
+            return this.$message.error('添加用户失败!')
           }
           this.$message.success('添加用户成功!')
           // 隐藏添加用户的对话框
@@ -310,13 +310,13 @@
       // 监听分配角色事件
       async setRole(userInfo) {
         this.userInfo = userInfo
-        this.setRoleDialogVisible = true
         const {data: res} = await this.$http.get('roles')
         if (res.meta.status !== 200) {
           return this.$message.error('获取角色列表失败!')
         }
-        this.rolesList = res.data
+        this.rolesList = res.data;
         // console.log(this.rolesList,319);
+        this.setRoleDialogVisible = true
       },
       // 点击确定给用户分配角色
       async saveUsersRole() {
@@ -326,9 +326,9 @@
         }
         const {data: res} = await this.$http.put(`users/${this.userInfo.id}/role`, {rid: this.selectedRoleId})
         if (res.meta.status !== 200) {
-          this.$message.error('角色分配失败!')
+          return this.$message.error('更新角色失败!')
         }
-        this.$message.success('角色分配成功!')
+        this.$message.success('更新角色成功!')
         // console.log(res,331);
         this.getUsersList();
         this.setRoleDialogVisible = false

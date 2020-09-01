@@ -18,7 +18,7 @@
 
       <!-- 表格 -->
       <tree-table class="treeTable" :data="cateList" :columns="columns" :selection-type="false" :expand-type="false" 
-      :show-row-hover="false" show-index border>
+      :show-row-hover="false" show-index border :show-header="true">
         <!-- 是否有效列 -->
         <template slot="isOk" slot-scope="scope">
           <i class="el-icon-success" v-if="scope.row.cat_deleted === false" style="color: lightgreen"></i>
@@ -300,13 +300,19 @@
     font-size: 12px;
   }
   .el-card {
+    position: relative;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+    height: 620px;
   }
   .treeTable {
     margin-top: 15px;
+    max-height: 500px;
+    overflow: auto;
   }
   .el-pagination {
+    position: absolute;
     margin-top: 15px;
+    bottom: 10px;
   }
   .el-cascader {
     width: 100%;

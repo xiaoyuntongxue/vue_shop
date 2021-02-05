@@ -9,7 +9,7 @@
     <!-- 内容主体区域 -->
     <el-card>
       <!-- 权限列表 -->
-      <el-table :data="rightsList" border stripe>
+      <el-table :data="rightsList" border stripe height="550">
         <!-- 插入序号列 -->
         <el-table-column type="index" label="序号" width="100px"></el-table-column>
         <el-table-column prop="authName" label="权限名称"></el-table-column>

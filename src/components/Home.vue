@@ -97,9 +97,11 @@
 
 <style lang="less" scoped>
   .home-container {
+    // position: relative;
     height: 100%;
   }
   .el-header {
+    position: relative;
     display: flex;
     justify-content: space-between;
     background-color: #373d41;
@@ -108,6 +110,11 @@
     font-size: 20px;
   }
   .el-aside {
+    position: absolute;
+    display: block;
+    left: 0;
+    top: 60px;
+    bottom: 0;
     background-color: #333744;
     .el-menu {
       border-right: none;
@@ -126,6 +133,12 @@
     margin-right: 10px;
   }
   .el-main {
+    position: absolute;
+    left: 200px;
+    top: 60px;
+    bottom: 0;
+    right: 0;
+    overflow-y: scroll;
     background-color: #eaedf1;
   }
 </style>

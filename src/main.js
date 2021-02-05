@@ -17,6 +17,10 @@ import VueQuillEditor from 'vue-quill-editor'
 // 将VueQuillEditor注册为全局可用的组件
 Vue.use(VueQuillEditor)
 
+// 引入echarts
+import echarts from 'echarts'
+Vue.prototype.$echarts = echarts
+
 // 配置axios
 import axios from 'axios'
 // axios请求拦截

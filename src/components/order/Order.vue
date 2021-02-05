@@ -85,7 +85,7 @@
   import cityData from './citydata'
 
   export default {
-    name: 'List',
+    name: 'Order',
     data() {
       return {
         // 获取到的订单列表数据
